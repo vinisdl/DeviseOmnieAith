@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   resources :products
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
-  root 'products#index'
+  root 'home#index'
   
    
   # The priority is based upon order of creation: first created -> highest priority.
