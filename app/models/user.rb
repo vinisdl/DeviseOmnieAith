@@ -19,8 +19,18 @@
 #  uid                    :string
 #  name                   :string
 #
+# Indexes
+#
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#
 
 class User < ActiveRecord::Base
+  rolify :before_add => :before_add_method
+
+  def before_add_method(role)
+    # do something before it gets added
+  end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

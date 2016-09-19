@@ -37,7 +37,10 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass'
-gem 'annotate'
+gem 'annotate', github: 'ctran/annotate_models'
+gem "cancancan"
+gem 'rolify'
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
